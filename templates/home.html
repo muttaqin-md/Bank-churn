@@ -1,0 +1,99 @@
+<html>
+<body>
+    <div class="login">
+       <h1>Bank Customer Churn Indicator</h1>
+   
+       <form action="{{ url_for('predict_datapoint')}}" method="post">
+        <h1>
+            <legend>Bank Customer Churn Prediction</legend>
+        </h1>
+        <div class="mb-3">
+            <label class="form-label">Gender</label>
+            <select class="form-control" name="gender" placeholder="Enter Gender" required>
+                <option class="placeholder" selected disabled value="">Select Gender</option>
+                <option value="Male">
+                    Male
+                </option>
+                <option value="Female">
+                    Female
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Geography</label>
+            <select class="form-control" name="Geography" placeholder="Enter Geography" required>
+                <option class="placeholder" selected disabled value="">Select Geography</option>
+                <option value="France">
+                    France
+                </option>
+                <option value="Spain">
+                    Spain
+                </option>
+                <option value="Germany">
+                    Germany
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Credit score out of 850</label>
+            <input class="form-control" type="number" name="CreditScore"
+                placeholder="Enter credit score" min='350' max='850' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Age (>18)</label>
+            <input class="form-control" type="number" name="Age"
+                placeholder="Enter age" min='18' max='100' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Tenure (0-10)</label>
+            <input class="form-control" type="number" name="Tenure"
+                placeholder="Enter tenure" min='0' max='10' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Balance</label>
+            <input class="form-control" type="number" name="Balance"
+                placeholder="Enter Balance" min='0' max='300000' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Number Of Products (1-4)</label>
+            <input class="form-control" type="number" name="NumOfProducts"
+                placeholder="Enter Number Of Products" min='1' max='4' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Has Credit Card</label>
+            <select class="form-control" name="HasCrCard" placeholder="Has Credit Card" required>
+                <option class="placeholder" selected disabled value="">Has Credit Card</option>
+                <option value="1">
+                    Yes
+                </option>
+                <option value="0">
+                    No
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Is Customer An Active Member</label>
+            <select class="form-control" name="IsActiveMember" placeholder="Is Active Member" required>
+                <option class="placeholder" selected disabled value="">Is Active Member</option>
+                <option value="1">
+                    Yes
+                </option>
+                <option value="0">
+                    No
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Estimated Salary</label>
+            <input class="form-control" type="number" name="EstimatedSalary"
+                placeholder="Enter Estimated Salary" min='1' max='300000' />
+        </div>
+        <div class="mb-3">
+            <input class="btn btn-primary" type="submit" value="Predict Churn" required />
+        </div>
+    </form>
+    <h2>
+       The prediction is {{results}}
+    </h2>
+   <body>
+</html>
